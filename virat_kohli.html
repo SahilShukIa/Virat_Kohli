@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virat Kohli - The King of Cricket</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .author-info {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .author-info p {
+            margin: 5px 0;
+            font-size: 0.95em;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .content h2 {
+            color: #1e3c72;
+            margin: 30px 0 15px;
+            font-size: 1.8em;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+        }
+
+        .content p {
+            margin-bottom: 15px;
+            text-align: justify;
+            font-size: 1.05em;
+        }
+
+        .stats-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .stats-table thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .stats-table th,
+        .stats-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .stats-table th {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 0.5px;
+        }
+
+        .stats-table tbody tr:hover {
+            background: #f5f5f5;
+            transition: background 0.3s ease;
+        }
+
+        .stats-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .achievements {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .achievements h3 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .achievements ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .achievements li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .achievements li:before {
+            content: "🏆";
+            position: absolute;
+            left: 0;
+        }
+
+        .comment-section {
+            padding: 40px 30px;
+            background: #f9f9f9;
+        }
+
+        .comment-section h2 {
+            color: #1e3c72;
+            margin-bottom: 30px;
+            font-size: 1.8em;
+        }
+
+        .comment-box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .comment-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .commenter-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-right: 15px;
+        }
+
+        .commenter-info h4 {
+            color: #333;
+            margin-bottom: 3px;
+        }
+
+        .commenter-info span {
+            color: #888;
+            font-size: 0.85em;
+        }
+
+        .comment-text {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .reply-section {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e0e0;
+        }
+
+        .reply-box {
+            background: #f0f4ff;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .reply-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .author-badge {
+            background: #667eea;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            margin-left: 10px;
+            font-weight: 600;
+        }
+
+        .reply-text {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .reply-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: transform 0.2s;
+        }
+
+        .reply-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .hero-image {
+                height: 250px;
+            }
+
+            .content {
+                padding: 25px 20px;
+            }
+
+            .content h2 {
+                font-size: 1.4em;
+            }
+
+            .stats-table {
+                font-size: 0.9em;
+            }
+
+            .stats-table th,
+            .stats-table td {
+                padding: 10px 8px;
+            }
+
+            .comment-section {
+                padding: 25px 20px;
+            }
+
+            .commenter-avatar {
+                width: 40px;
+                height: 40px;
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            .author-info {
+                font-size: 0.85em;
+            }
+
+            .content h2 {
+                font-size: 1.2em;
+            }
+
+            .content p {
+                font-size: 0.95em;
+            }
+
+            .stats-table {
+                font-size: 0.8em;
+            }
+
+            .stats-table th,
+            .stats-table td {
+                padding: 8px 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏏 Virat Kohli - The King of Cricket 🏏</h1>
+            <div class="author-info">
+                <p><strong>Blog by:</strong> Aashu</p>
+                <p><strong>UID:</strong> 25BCS11415</p>
+                <p><strong>Class:</strong> 404A</p>
+                <p><strong>Subject:</strong> Communication Skills (25PCH-110)</p>
+            </div>
+        </header>
+
+        <img src="https://images.fineartamerica.com/images/artworkimages/medium/3/virat-kohli-wallpaper-vinay-sainath.jpg" alt="Virat Kohli" class="hero-image">
+
+        <div class="content">
+            <h2>Introduction</h2>
+            <p>Virat Kohli, born on November 5, 1988, in Delhi, India, is widely regarded as one of the greatest batsmen in the history of cricket. Known for his aggressive batting style, exceptional fitness, and remarkable consistency across all formats of the game, Kohli has redefined modern cricket batting. His journey from a young cricket enthusiast to becoming the captain of the Indian cricket team is nothing short of inspirational.</p>
+
+            <p>With a career spanning over 15 years, Kohli has broken numerous records and has become a role model for millions of aspiring cricketers worldwide. His passion for the game, combined with his unwavering dedication and mental strength, has made him a true legend of the sport.</p>
+
+            <h2>Career Statistics</h2>
+            <table class="stats-table">
+                <thead>
+                    <tr>
+                        <th>Format</th>
+                        <th>Matches</th>
+                        <th>Runs</th>
+                        <th>Average</th>
+                        <th>Centuries</th>
+                        <th>Highest Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Test Cricket</strong></td>
+                        <td>113</td>
+                        <td>8,848</td>
+                        <td>49.16</td>
+                        <td>29</td>
+                        <td>254*</td>
+                    </tr>
+                    <tr>
+                        <td><strong>ODI Cricket</strong></td>
+                        <td>292</td>
+                        <td>13,848</td>
+                        <td>58.18</td>
+                        <td>50</td>
+                        <td>183</td>
+                    </tr>
+                    <tr>
+                        <td><strong>T20I Cricket</strong></td>
+                        <td>125</td>
+                        <td>4,188</td>
+                        <td>52.73</td>
+                        <td>1</td>
+                        <td>122*</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="achievements">
+                <h3>Major Achievements & Awards</h3>
+                <ul>
+                    <li>ICC ODI Player of the Year: 2012, 2017, 2018</li>
+                    <li>ICC Test Player of the Year: 2018</li>
+                    <li>Sir Garfield Sobers Trophy for ICC Cricketer of the Year: 2017, 2018</li>
+                    <li>Rajiv Gandhi Khel Ratna Award: 2018</li>
+                    <li>Padma Shri Award: 2017</li>
+                    <li>Arjuna Award: 2013</li>
+                    <li>Wisden Leading Cricketer in the World: 2016, 2017, 2018</li>
+                    <li>Most centuries in ODI cricket while chasing (26 centuries)</li>
+                    <li>Fastest to 8,000, 9,000, 10,000, 11,000, 12,000, and 13,000 ODI runs</li>
+                    <li>Captain of India in all three formats (2017-2022)</li>
+                </ul>
+            </div>
+
+            <h2>Playing Style & Legacy</h2>
+            <p>Virat Kohli's batting technique is characterized by his strong bottom-hand grip, excellent footwork, and the ability to play shots all around the wicket. His cover drives are considered among the most elegant in modern cricket. What sets Kohli apart is his incredible ability to chase targets in ODI cricket, earning him the nickname "Chase Master".</p>
+
+            <p>Beyond his batting prowess, Kohli is known for his aggressive captaincy style and his emphasis on fitness, which has revolutionized Indian cricket. He has inspired a generation of cricketers to prioritize physical fitness and mental conditioning. His passion and intensity on the field are infectious, making him one of the most watched and celebrated athletes globally.</p>
+
+            <h2>Impact Beyond Cricket</h2>
+            <p>Off the field, Virat Kohli is a successful entrepreneur and philanthropist. He owns a chain of fitness centers and a fashion brand. He actively supports various charitable causes and has been vocal about mental health awareness in sports. His marriage to Bollywood actress Anushka Sharma has made him even more prominent in Indian popular culture.</p>
+
+            <p>As Kohli continues to play and break records, his legacy as one of cricket's all-time greats is already firmly established. His contribution to Indian cricket and the sport globally will be remembered for generations to come.</p>
+        </div>
+
+        <div class="comment-section">
+            <h2>💬 Comments</h2>
+            
+            <div class="comment-box">
+                <div class="comment-header">
+                    <div class="commenter-avatar">SS</div>
+                    <div class="commenter-info">
+                        <h4>Sahil Shukla</h4>
+                        <span>Posted on November 8, 2025</span>
+                    </div>
+                </div>
+                <div class="comment-text">
+                    <p>Outstanding blog, Aashu! Virat Kohli is truly an inspiration for every cricket lover. His consistency and dedication to the game are unmatched. The way he handles pressure situations, especially while chasing targets, is phenomenal. He has not only been a great player but also an excellent leader who transformed the Indian cricket team's approach towards fitness and aggression. King Kohli will always remain one of the greatest batsmen of all time! 🏏👑</p>
+                </div>
+                
+                <div class="reply-section">
+                    <div class="reply-box">
+                        <div class="reply-header">
+                            <div class="commenter-avatar">A</div>
+                            <div class="commenter-info">
+                                <h4>Aashu <span class="author-badge">AUTHOR</span></h4>
+                                <span>Replied on November 9, 2025</span>
+                            </div>
+                        </div>
+                        <div class="reply-text">
+                            <p>Thank you so much, Sahil! I completely agree with you. Virat's impact on Indian cricket goes beyond just the numbers. His fitness revolution and mental toughness have set new standards for the entire team. The way he fights till the last ball and never gives up is what makes him truly special. His chasing record speaks volumes about his temperament and ability to perform under pressure. Glad you enjoyed the blog! 🙏🏏</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 Virat Kohli Blog | Created by Aashu | All Rights Reserved</p>
+            <p>UID: 25BCS11415 | Class: 404A | Communication Skills (25PCH-110)</p>
+        </footer>
+    </div>
+</body>
+</html>
